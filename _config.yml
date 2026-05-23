@@ -42,3 +42,5 @@ deploy:
   repo: https://github.com/ffrankwang/ffrankwang.github.io.git
   branch: master
   message: 'Site updated: {{ now("YYYY-MM-DD HH:mm:ss") }}'
+  name: Frank Wang
+  email: mstiger@126.com
