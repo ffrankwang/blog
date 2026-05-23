@@ -5,3 +5,6 @@ db.json
 node_modules/
 public/
 .deploy*/
+# hexo-pro runtime data
+data/
+blogInfoList.json

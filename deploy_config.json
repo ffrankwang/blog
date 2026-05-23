@@ -1,0 +1,21 @@
+{
+  "repository": "ffrankwang/ffrankwang.github.io",
+  "branch": "master",
+  "message": "Site updated: {{ now(\"YYYY-MM-DD HH:mm:ss\") }}",
+  "token": "",
+  "cloudflare": {
+    "accountId": "",
+    "projectName": "",
+    "apiToken": ""
+  },
+  "edgeone": {
+    "projectName": "",
+    "apiToken": "",
+    "env": "production"
+  },
+  "deployType": "github",
+  "enabledPlatforms": [
+    "github"
+  ],
+  "lastDeployTime": ""
+}
