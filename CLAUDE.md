@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Hexo 8.1.2 static blog (Chinese-language, author: Frank Wang) using the Fluid theme. Deploys to GitHub Pages at `https://ffrankwang.github.io/`.
 
+## Code change rules
+
+**CRITICAL: When you modify any workflow, directory structure, command, or configuration that is documented in CLAUDE.md or README.md, you MUST update those files in the same commit.** Do not wait for the user to remind you. This is mandatory — check both files after every code change.
+
 ## Commands
 
 ```bash
