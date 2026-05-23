@@ -5,6 +5,9 @@
   "hexo": {
     "version": "8.1.2"
   },
+  "scripts": {
+    "gallery": "node scripts/generate-gallery.js"
+  },
   "dependencies": {
     "hexo": "^8.1.2",
     "hexo-deployer-git": "^3.0.0",
@@ -17,6 +20,7 @@
     "hexo-renderer-marked": "^4.1.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
-    "hexo-theme-fluid": "^1.8.11"
+    "hexo-theme-fluid": "^1.8.11",
+    "sharp": "^0.34.5"
   }
 }
