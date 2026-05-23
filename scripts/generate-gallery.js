@@ -45,6 +45,23 @@ async function main() {
     const thumbPath = path.join(THUMB_DIR, file)
     const displayPath = path.join(DISPLAY_DIR, file)
 
+    // Read EXIF shooting date (earliest date in EXIF = original shooting date), fall back to file mtime
+    let shotDate = null
+    try {
+      const meta = await sharp(photoPath).metadata()
+      if (meta.exif) {
+        const dates = meta.exif.toString('binary')
+          .match(/\d{4}:\d{2}:\d{2} \d{2}:\d{2}:\d{2}/g)
+        if (dates && dates.length) {
+          dates.sort()
+          shotDate = new Date(dates[0].replace(/:/, '-').replace(/:/, '-'))
+        }
+      }
+    } catch (e) { /* ignore, will use mtime */ }
+    if (!shotDate || isNaN(shotDate.getTime())) {
+      shotDate = fs.statSync(photoPath).mtime
+    }
+
     if (!fs.existsSync(thumbPath)) {
       try {
         await sharp(photoPath)
@@ -71,16 +88,15 @@ async function main() {
       }
     }
 
-    const stat = fs.statSync(photoPath)
     gallery.push({
       name: file,
       src: `/img/gallery/display/${file}`,
       thumb: `/img/gallery/thumb/${file}`,
-      mtime: stat.mtime.toISOString()
+      shotDate: shotDate.toISOString()
     })
   }
 
-  gallery.sort((a, b) => b.mtime.localeCompare(a.mtime))
+  gallery.sort((a, b) => b.shotDate.localeCompare(a.shotDate))
 
   const json = JSON.stringify(gallery, null, 2)
   fs.writeFileSync(DATA_FILE, json)
