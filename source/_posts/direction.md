@@ -2,6 +2,7 @@
 title: direction
 date: 2016-02-10 08:26:03
 tags: 未来
+categories: 编程
 ---
 
 关于未来的方向选择
