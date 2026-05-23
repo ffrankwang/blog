@@ -2,7 +2,7 @@ const sharp = require('sharp')
 const fs = require('fs')
 const path = require('path')
 
-const PHOTOS_DIR = path.join(__dirname, '..', 'source', 'img', 'gallery', 'photos')
+const PHOTOS_DIR = path.join(__dirname, '..', 'gallery-photos')
 const THUMB_DIR = path.join(__dirname, '..', 'source', 'img', 'gallery', 'thumb')
 const DISPLAY_DIR = path.join(__dirname, '..', 'source', 'img', 'gallery', 'display')
 const DATA_FILE = path.join(__dirname, '..', 'source', 'gallery.json')

@@ -8,8 +8,8 @@ public/
 # hexo-pro runtime data
 data/
 blogInfoList.json
-# gallery
-source/img/gallery/photos/
+# gallery (originals stay local, compressed versions are deployed)
+gallery-photos/
 source/img/gallery/thumb/
 source/img/gallery/display/
 source/gallery.json
